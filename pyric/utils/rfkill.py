@@ -100,8 +100,11 @@ def rfkill_block(idx):
     fout = None
     try:
         rfke = rfkh.rfkill_event(idx,rfkh.RFKILL_TYPE_ALL,rfkh.RFKILL_OP_CHANGE,1,0)
-        if _PY3_: rfke = rfke.decode('ascii')
-        fout = open(dpath, 'w')
+        if _PY3_:
+            rfke = rfke.decode('ascii')
+            fout = open(dpath, 'w')
+        else:
+            fout = open(dpath, 'wb')
         fout.write(rfke)
     except struct.error as e:
         raise pyric.error(pyric.EUNDEF,"Error packing rfkill event {0}".format(e))
@@ -131,8 +134,11 @@ def rfkill_unblock(idx):
     fout = None
     try:
         rfke = rfkh.rfkill_event(idx,rfkh.RFKILL_TYPE_ALL,rfkh.RFKILL_OP_CHANGE,0,0)
-        if _PY3_: rfke = rfke.decode('ascii')
-        fout = open(dpath, 'w')
+        if _PY3_:
+            rfke = rfke.decode('ascii')
+            fout = open(dpath, 'w')
+        else:
+            fout = open(dpath, 'wb')
         fout.write(rfke)
     except struct.error as e:
         raise pyric.error(pyric.EUNDEF,"Error packing rfkill event {0}".format(e))
