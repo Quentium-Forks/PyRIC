@@ -39,10 +39,10 @@ Requires:
 
 __name__ = 'pyric'
 __license__ = 'GPLv3'
-__version__ = '0.1.6.4'
-__date__ = 'January 2017'
+__version__ = '0.1.7'
+__date__ = 'September 2025'
 __author__ = 'Dale Patterson'
-__maintainer__ = 'Dale Patterson'
+__maintainer__ = 'Quentin L'
 __email__ = 'wraith.wireless@yandex.com'
 __status__ = 'Production'
 
@@ -84,7 +84,7 @@ version = __version__
 
 # define long description
 long_desc = """
-# PyRIC 0.1.6.4: Python Radio Interface Controller
+# PyRIC 0.1.7: Python Radio Interface Controller
 ## Linux wireless library for the Python Wireless Developer and Pentester
 
 ## DESCRIPTION:
