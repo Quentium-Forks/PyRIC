@@ -43,7 +43,7 @@ global variable
 * Consolidate different "reference" values to wireless NICs in one class
 (Cards are tuples t=(dev,phy #,ifindex)
 
-These are minimal changes but they can improve the performance of any progams
+These are minimal changes but they can improve the performance of any programs
 that needs to access the wireless nic repeatedly as shown in the table below.
 
 | chset      | Total    | Avg    | Longest   | Shortest |
@@ -104,7 +104,7 @@ the comments nl80211 header file and may be vague.
 
 To avoid confusion, PyRIC is the system as a whole, including all header files
 and "libraries" that are required to communicate with the kernel. pyw is a
-interface to these libraries providing specific funtions.
+interface to these libraries providing specific functions.
 
 What it does - defines programmatic access to a subset of iw, ifconfig and rkill.
 In short, PyRIC provides Python wireless pentesters the ability to work with
@@ -151,7 +151,7 @@ if you want to try it in Python 3).
 
 ### e. Stability vs Latest
 
-Keep in mind that the most stable version and easist installallation but oldest
+Keep in mind that the most stable version and easiest installation but oldest
 release is on PyPI (installed through pip). The source on http://wraith-wireless.github.io/PyRIC tends to be
 newer but may have some bugs. The most recent source but hardest to install is on
 https://github.com/wraith-wireless/pyric/releases/ It is not guaranteed to be stable
@@ -159,7 +159,7 @@ https://github.com/wraith-wireless/pyric/releases/ It is not guaranteed to be st
 fact not run at all.
 
 ## 3. USING
-To use PyRIC, see the examples folder or read throuhg PyRIC.pdf. However, for
+To use PyRIC, see the examples folder or read through PyRIC.pdf. However, for
 those impatient types:
 
 ```python
@@ -198,7 +198,7 @@ These functions do not work with a specific device rather with the system.
 ```python
 >>> pyw.interfaces() # get all system interfaces
 ['lo','eth0','wlan']
->>> pyw.isinterface('eth0') # deterimine if eth0 is an interface
+>>> pyw.isinterface('eth0') # determine if eth0 is an interface
 True
 >>> pyw.isinterface('bob0')
 False
@@ -209,7 +209,7 @@ False
 >>> pyw.iswireless('wlan0')
 True
 >>> pyw.phylist() # list all current phys (Note device ASW phy1)
-[(1,'phy1), (0, 'phy0')]
+[(1,'phy1'), (0,'phy0')]
 >>> pyw.regget() # get the regulatory domain
 'US'
 >>> pyw.regset('BO') # set the regulatory domain
@@ -261,7 +261,7 @@ True
 >>> pyw.isup(w0)
 False
 >>> pyw.up(w0)
->>> pyw.isblocked(w0) # returns tup;e (Soft Block, Hard Block)
+>>> pyw.isblocked(w0) # returns tuple (Soft Block, Hard Block)
 (True,False)
 >>> pyw.unblock(w0) # turn off the softblock
 >>> pyw.isblocked(w0)
@@ -300,7 +300,7 @@ when setting the inet addresses: for example you can set the ip address on
 
 #### iii. WLAN Radio Properties
 You may want to set power management or other radio properties when pentesting.
-Particulary, if you are configuring a rogue AP.
+Particularly, if you are configuring a rogue AP.
 
 ```python
 >>> pyw.pwrsaveget(w0)
@@ -752,7 +752,7 @@ hw.randhw(ouis) # generate a random mac address
 hw.manufacturer(ouis,'00:03:f0:5a:a1:fc')
 => 'Redfern Broadband Networks'
 
-hw.ifcard('wlan0') # get driver & chipset
+hw.ifcard(dev) # get driver & chipset
 => ('iwlwifi', 'Intel 4965/5xxx/6xxx/1xxx')
 ```
 
